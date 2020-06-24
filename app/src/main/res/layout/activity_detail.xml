@@ -39,7 +39,7 @@
         android:id="@+id/type"
         android:layout_width="67dp"
         android:layout_height="34dp"
-        android:text="Type "
+        android:text="Type"
         android:textColor="#ffffff"
         android:textSize="25sp"
         android:textStyle="bold"
