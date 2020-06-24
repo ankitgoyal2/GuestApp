@@ -52,6 +52,7 @@ public class DetailActivity extends AppCompatActivity {
                 model.setText(machine.getModelNumber());
                 serialNo.setText(machine.getSerialNumber());
                 price.setText(String.valueOf(machine.getPrice()));
+                dateOfInstallation.setText(machine.getDateOfInstallation());
             }
 
             @Override
