@@ -34,9 +34,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.material:material:1.0.0-alpha1'
+    implementation 'com.google.android.material:material:1.3.0-alpha01'
 
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.4.3'
 
     // for Parcels
     implementation 'org.parceler:parceler-api:1.1.12'
@@ -50,13 +50,13 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0@aar'
 
     //ML Vision
-    implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
 
     //Firebase Database
-    implementation 'com.google.firebase:firebase-database:19.2.0'
+    implementation 'com.google.firebase:firebase-database:19.3.1'
 
     //Firebase Authentication
-    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
 
     //Firebase Cloud Storage
     implementation 'com.google.firebase:firebase-storage:19.1.1'
@@ -71,18 +71,18 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.20'
 
     //material - io
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
 
     // Facebook Shimmer Effect
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 
     //for Firebase messaging service and notifications
-    implementation 'com.google.firebase:firebase-functions:19.0.1'
+    implementation 'com.google.firebase:firebase-functions:19.0.2'
 
-    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.1'
 
     // lottie
     implementation 'com.airbnb.android:lottie:3.3.1'
@@ -100,7 +100,7 @@ dependencies {
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 
     // paging dependency
-    implementation "androidx.paging:paging-runtime:2.1.1"
+    implementation "androidx.paging:paging-runtime:2.1.2"
 
     // firebase adapters
     implementation 'com.firebaseui:firebase-ui-database:6.2.0'
