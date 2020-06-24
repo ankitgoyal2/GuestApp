@@ -10,7 +10,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.SharedLibraryInfo;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
@@ -21,6 +23,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.example.guestapp.DialogBox.ScanDialogBox;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.ml.vision.FirebaseVision;
@@ -55,6 +59,8 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     ImageButton flashlight1 ;
     int flash_ON;
 
+    SharedPreferences sharedPreferences = null;
+
     FirebaseVisionBarcodeDetector detector;
     FirebaseVisionBarcodeDetectorOptions options;
     @Override
@@ -62,6 +68,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
+        sharedPreferences = getSharedPreferences("com.example.guestapp",MODE_PRIVATE);
         scannerView = findViewById(R.id.ScannerFrontend);
         flashlight1 = findViewById(R.id.flashlight1);
         flash_ON = 0;
@@ -126,6 +133,12 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 }
                 scannerView.setResultHandler(ScanActivity.this);
                 scannerView.startCamera();
+                if (sharedPreferences.getBoolean("firstrun", true)) {
+
+                    ScanDialogBox scanDialogBox = new ScanDialogBox(ScanActivity.this);
+                    scanDialogBox.show();
+                    sharedPreferences.edit().putBoolean("firstrun", false).apply();
+                }
             }
             else
             {
@@ -171,4 +184,5 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             scannerView.setFlash(false);
         }
     }
+
 }
