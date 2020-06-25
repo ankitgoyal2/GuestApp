@@ -38,7 +38,7 @@
             android:fontFamily="@font/crete_round"
             android:text="Equipment Details"
             android:textColor="#ffffff"
-            android:textSize="35sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -50,8 +50,39 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:shimmer_duration="800">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_holder" />
+
+            <include layout="@layout/shimmer_holder" />
+
+            <include layout="@layout/shimmer_holder" />
+
+            <include layout="@layout/shimmer_holder" />
+
+            <include layout="@layout/shimmer_holder" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraint_layout_box_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
@@ -108,7 +139,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/constraint_layout_box_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0"
@@ -119,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout_box_1">
 
 
         <androidx.core.widget.NestedScrollView
@@ -279,7 +310,7 @@
                     android:layout_marginTop="50dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"></ImageView>
+                    app:layout_constraintVertical_bias="0.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -289,14 +320,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_box_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias="1"
         android:background="@drawable/round_corners_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
 
         <TextView
             android:id="@+id/textView9"
@@ -304,8 +336,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
-            android:textAlignment="center"
             android:text="Any Problem? Please provide us Feedback"
+            android:textAlignment="center"
             android:textColor="#6699aa"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -333,8 +365,5 @@
         </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
