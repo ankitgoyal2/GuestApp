@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.view.View;
+import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,10 +29,12 @@ public class DetailActivity extends AppCompatActivity {
     Machine machine;
     TextView company, type, model, serialNo, dateOfInstallation, price;
     Button feedbackButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
 
         company = findViewById(R.id.company);
         type = findViewById(R.id.type);
@@ -65,8 +71,10 @@ public class DetailActivity extends AppCompatActivity {
         feedbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(DetailActivity.this,FeedbackActivity.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.feedback_enter_anim,R.anim.fade_out);
             }
         });
     }
