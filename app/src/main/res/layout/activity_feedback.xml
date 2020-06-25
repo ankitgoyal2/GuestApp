@@ -53,9 +53,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/round_corners_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -263,12 +263,14 @@
                 </EditText>
 
                 <Button
+
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/all_rounded_corners"
                     android:text="Submit"
+                    android:elevation="10dp"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
