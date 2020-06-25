@@ -7,7 +7,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.guestapp.model.Machine;
@@ -28,15 +31,25 @@ public class DetailActivity extends AppCompatActivity {
     Button feedbackButton;
     ShimmerFrameLayout shimmerFrameLayout;
     ConstraintLayout constraintLayoutBox1, constraintLayoutBox2, constraintLayoutBox3;
+    ImageView back;
+    TranslateAnimation constraintLayoutBox1Anim,constraintLayoutBox2Anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
         shimmerFrameLayout = findViewById(R.id.shimmer_container);
         constraintLayoutBox1 = findViewById(R.id.constraint_layout_box_1);
         constraintLayoutBox2 = findViewById(R.id.constraint_layout_box_2);
         constraintLayoutBox3 = findViewById(R.id.constraint_layout_box_3);
+
+        constraintLayoutBox1Anim = new TranslateAnimation(-800,0,0,0);
+        constraintLayoutBox2Anim = new TranslateAnimation(-1000,0,0,0);
+        constraintLayoutBox1Anim.setInterpolator(new LinearInterpolator());
+        constraintLayoutBox2Anim.setInterpolator(new LinearInterpolator());
+        constraintLayoutBox1Anim.setDuration(300);
+        constraintLayoutBox2Anim.setDuration(300);
 
         constraintLayoutBox1.setVisibility(View.INVISIBLE);
         constraintLayoutBox2.setVisibility(View.INVISIBLE);
@@ -70,6 +83,8 @@ public class DetailActivity extends AppCompatActivity {
                 constraintLayoutBox1.setVisibility(View.VISIBLE);
                 constraintLayoutBox2.setVisibility(View.VISIBLE);
                 constraintLayoutBox3.setVisibility(View.VISIBLE);
+                constraintLayoutBox1.startAnimation(constraintLayoutBox1Anim);
+                constraintLayoutBox2.startAnimation(constraintLayoutBox2Anim);
             }
 
             @Override
@@ -88,6 +103,16 @@ public class DetailActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.feedback_enter_anim,R.anim.fade_out);
             }
         });
+
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
     @Override
