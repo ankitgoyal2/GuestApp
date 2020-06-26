@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.parceler.Parcels;
+
 public class DetailActivity extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
@@ -99,6 +101,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(DetailActivity.this,FeedbackActivity.class);
+                i.putExtra("machine", Parcels.wrap(machine));
                 startActivity(i);
                 overridePendingTransition(R.anim.feedback_enter_anim,R.anim.fade_out);
             }

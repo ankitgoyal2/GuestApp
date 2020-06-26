@@ -77,7 +77,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
 
     // Facebook Shimmer Effect
-    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    //implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 
     //for Firebase messaging service and notifications
     implementation 'com.google.firebase:firebase-functions:19.0.2'

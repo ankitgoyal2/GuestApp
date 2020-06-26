@@ -112,7 +112,7 @@
                 </TextView>
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -137,13 +137,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/name"
                     app:layout_constraintVertical_bias="0">
 
                 </TextView>
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -169,13 +169,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText1"
+                    app:layout_constraintTop_toBottomOf="@+id/email"
                     app:layout_constraintVertical_bias="0">
 
                 </TextView>
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -201,7 +201,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText2"
+                    app:layout_constraintTop_toBottomOf="@+id/number"
                     app:layout_constraintVertical_bias="0">
 
                 </TextView>
@@ -219,13 +219,13 @@
                     app:layout_constraintVertical_bias="0">
 
                     <RadioButton
-                        android:id="@+id/radio_pirates"
+                        android:id="@+id/radio_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
-                        android:id="@+id/radio_ninjas"
+                        android:id="@+id/radio_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No" />
@@ -249,7 +249,7 @@
                 </TextView>
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/reviews"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -265,6 +265,7 @@
 
                 <Button
 
+                    android:id="@+id/submit_button"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
@@ -277,7 +278,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText3">
+                    app:layout_constraintTop_toBottomOf="@+id/reviews">
 
                 </Button>
 
