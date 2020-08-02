@@ -2,6 +2,8 @@ package com.example.guestapp.model;
 
 import org.parceler.Parcel;
 
+import java.util.HashMap;
+
 @Parcel
 public class Complaint implements Cloneable{
 
@@ -12,15 +14,16 @@ public class Complaint implements Cloneable{
     public static int complaintFinished = 5;
 
     private String description,generatedDate, completedDate;
+
     private Machine machine;
     private Manager manager;
     private Mechanic mechanic;
     private int status;
     private long complaintId;
-    private float cost=0;
-
-//    boolean isExpanded;
+    public float cost=0;
+    private HashMap<String,Request> pendingRequest;
     private Chat chat;
+    private String serviceType, instruction;
 
     public Object clone() throws
             CloneNotSupportedException
@@ -30,7 +33,7 @@ public class Complaint implements Cloneable{
 
     public Complaint(){}
 
-    public Complaint(long complaintId, String description, String generatedDate, String completedDate, Machine machine, Manager manager, Mechanic mechanic, int status, float cost, Chat chat) {
+    public Complaint(long complaintId, String description, String generatedDate, String completedDate, Machine machine, Manager manager, Mechanic mechanic, int status, float cost, HashMap<String, Request> pendingRequest, Chat chat, String serviceType, String instruction) {
         this.complaintId = complaintId;
         this.description = description;
         this.generatedDate = generatedDate;
@@ -40,7 +43,10 @@ public class Complaint implements Cloneable{
         this.mechanic = mechanic;
         this.status = status;
         this.cost = cost;
+        this.pendingRequest = pendingRequest;
         this.chat = chat;
+        this.serviceType = serviceType;
+        this.instruction = instruction;
     }
 
     public long getComplaintId() {
@@ -115,6 +121,14 @@ public class Complaint implements Cloneable{
         this.cost = cost;
     }
 
+    public HashMap<String, Request> getPendingRequest() {
+        return pendingRequest;
+    }
+
+    public void setPendingRequest(HashMap<String, Request> pendingRequest) {
+        this.pendingRequest = pendingRequest;
+    }
+
     public Chat getChat() {
         return chat;
     }
@@ -124,4 +138,19 @@ public class Complaint implements Cloneable{
     }
 
 
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
 }

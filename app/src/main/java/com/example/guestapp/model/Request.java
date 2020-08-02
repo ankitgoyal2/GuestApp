@@ -63,12 +63,12 @@ public class Request implements Cloneable{
         this.approvedDate = approvedDate;
     }
 
-    public void setRequestId(long requestId) {
-        this.requestId = requestId;
-    }
-
     public long getRequestId() {
         return requestId;
+    }
+
+    public void setRequestId(int requestId) {
+        this.requestId = requestId;
     }
 
     public int getAvailabilityOfParts() {
@@ -95,3 +95,4 @@ public class Request implements Cloneable{
         this.status = status;
     }
 }
+
